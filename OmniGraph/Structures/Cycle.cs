@@ -25,7 +25,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace OmniGraph.Structures {
     // Represents a complete "cycle" or "shape" of 2d points.
@@ -94,17 +93,13 @@ namespace OmniGraph.Structures {
         }
 
         public override string ToString() {
-            StringBuilder result = new StringBuilder();
+            var strs = new List<string>();
 
-            for (var i = 0; i < Points.Count; i++) {
-                result.Append(Points[i].ToString());
-
-                if (i != Points.Count - 1) {
-                    result.Append(" -> ");
-                }
+            foreach (var p in Points) {
+                strs.Add(p.ToString());
             }
 
-            return result.ToString();
+            return string.Join(" -> ", strs.ToArray());
         }
     }
 }

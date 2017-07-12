@@ -45,6 +45,11 @@
     <Compile Include="FloodFill.cs" />
     <Compile Include="Structures\Triangle.cs" />
     <Compile Include="Test\CycleDetectionSpec.cs" />
+    <Compile Include="Test\LineDetectionSpec.cs" />
+    <Compile Include="Test\LineSpec.cs" />
+    <Compile Include="Test\SpatialIndexSpec.cs" />
+    <Compile Include="Test\MockGameObject.cs" />
+    <Compile Include="Test\FloodFillSpec.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Test\" />
@@ -52,11 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Test\LineDetectionSpec.cs" />
-    <None Include="Test\LineSpec.cs" />
-    <None Include="Test\SpatialIndexSpec.cs" />
-    <None Include="Test\MockGameObject.cs" />
-    <None Include="Test\FloodFillSpec.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

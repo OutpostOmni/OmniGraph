@@ -112,7 +112,7 @@ namespace OmniGraph {
             }
 
             // If we have a complete line, add to our list
-            if (end != start) {
+            if (!end.Equals(start)) {
                 var line = new Line(start, end, step);
                 lines.Add(line);
             }

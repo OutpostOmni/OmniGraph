@@ -22,11 +22,10 @@
  * THE SOFTWARE.
  */
 using System;
-using System.Text;
 
 namespace OmniGraph.Structures {
     // Represents a 2D grid coordinate.
-    public class Point : IEquatable<Point> {
+    public struct Point : IEquatable<Point> {
         public readonly int x;
         public readonly int y;
 
@@ -43,8 +42,11 @@ namespace OmniGraph.Structures {
             this.y = y;
         }
 
-        public double Distance(Point end) {
-            return Math.Pow(x - end.x, 2) + Math.Pow(y - end.y, 2);
+        public double Distance(Point other) {
+            int distanceX = x - other.x;
+            int distanceY = y - other.y;
+
+            return distanceX * distanceX + distanceY * distanceY;
         }
 
         public bool Equals(Point p) {
@@ -52,7 +54,7 @@ namespace OmniGraph.Structures {
         }
 
         public Point Inverse() {
-            return new Point(x * -1, y * -1);
+            return new Point(-x, -y);
         }
 
         public override int GetHashCode() {
@@ -64,15 +66,7 @@ namespace OmniGraph.Structures {
         }
 
         public override string ToString() {
-            var result = new StringBuilder();
-
-            result.Append("{");
-            result.Append(x);
-            result.Append(",");
-            result.Append(y);
-            result.Append("}");
-
-            return result.ToString();
+            return string.Format("{{{0},{1}}}", x, y);
         }
     }
 }

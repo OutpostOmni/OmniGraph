@@ -53,14 +53,12 @@ namespace OmniGraph {
             while (points.Count > 0) {
                 var point = points.Dequeue();
 
-                if (point != null) {
-                    totalFilled++;
+                totalFilled++;
 
-                    Check(point + North);
-                    Check(point + South);
-                    Check(point + East);
-                    Check(point + West);
-                }
+                Check(point + North);
+                Check(point + South);
+                Check(point + East);
+                Check(point + West);
             }
 
             return totalFilled;
