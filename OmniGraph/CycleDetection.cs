@@ -46,22 +46,18 @@ namespace OmniGraph {
             new Point(0, -1)
         };
 
-        // Cache our starting position
-        Point origin;
-
         // Cache the validation function
         Func<Point, bool> validator;
 
         // Initializes a new instance of the <see cref="T:OmniGraph.CycleDetection"/> class.
         public CycleDetection(Point origin, Func<Point, bool> validator) {
-            this.origin = origin;
             this.validator = validator;
 
-            this.Scan();
+            this.Scan(origin);
         }
 
         // Activate a new scan.
-        public void Scan() {
+        public void Scan(Point origin) {
             cycles.Clear();
 
             if (validator(origin)) {

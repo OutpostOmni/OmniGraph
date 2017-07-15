@@ -50,6 +50,7 @@
     <Compile Include="Test\SpatialIndexSpec.cs" />
     <Compile Include="Test\MockGameObject.cs" />
     <Compile Include="Test\FloodFillSpec.cs" />
+    <Compile Include="Test\CombinedSpec.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Test\" />
