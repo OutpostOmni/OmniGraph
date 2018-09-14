@@ -31,6 +31,8 @@ namespace OmniGraph {
         // Queue points to process
         Queue<Point> points = new Queue<Point>();
 
+        HashSet<Point> visited = new HashSet<Point>();
+
         static Point North = new Point(0, 1);
         static Point South = new Point(0, -1);
         static Point East = new Point(1, 0);
@@ -66,9 +68,12 @@ namespace OmniGraph {
 
         // Checks a given point and queues for further processing
         void Check(Point p) {
-            if (validator(p)) {
+            // If we have not visited this point and it validates, queue it
+            if (!visited.Contains(p) && validator(p)) {
                 points.Enqueue(p);
             }
+
+            visited.Add(p);
         }
     }
 }
